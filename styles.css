@@ -1,0 +1,221 @@
+/* Base Styles */
+:root {
+    --color-gold: #F5EC3F;
+    --color-gold-light: #F7F07F;
+    --color-gold-dark: #E5DC2F;
+    --color-gray-custom: #d9d9d9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: black;
+    color: white;
+    line-height: 1.5;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Navigation */
+nav {
+    transition: all 0.3s ease;
+}
+
+nav.scrolled {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+}
+
+.mobile-menu {
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.animate-fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Services Section */
+.service-category {
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(245, 236, 63, 0.2);
+    border-radius: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.service-category:hover {
+    transform: scale(1.05);
+    border-color: var(--color-gold);
+}
+
+.icon-container {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(245, 236, 63, 0.1);
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.icon-container svg {
+    color: var(--color-gold);
+}
+
+.service-card {
+    position: relative;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: scale(1.02);
+}
+
+.service-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.service-card:hover img {
+    transform: scale(1.1);
+}
+
+.service-card .content {
+    position: absolute;
+    inset: 0;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Testimonials */
+.testimonial-card {
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(245, 236, 63, 0.2);
+    border-radius: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+}
+
+.stars {
+    color: var(--color-gold);
+    margin-bottom: 1rem;
+}
+
+.quote {
+    font-style: italic;
+    color: var(--color-gray-custom);
+    margin-bottom: 1.5rem;
+}
+
+.author h4 {
+    font-weight: bold;
+    font-size: 1.125rem;
+}
+
+.author p {
+    color: var(--color-gold);
+}
+
+/* Contact Form */
+form input,
+form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(245, 236, 63, 0.2);
+    border-radius: 0.5rem;
+    color: white;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--color-gold);
+}
+
+form button {
+    width: 100%;
+    padding: 1rem 2rem;
+    background-color: var(--color-gold);
+    color: black;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: var(--color-gold-light);
+}
+
+.contact-info {
+    display: flex;
+    gap: 1rem;
+}
+
+.contact-info svg {
+    color: var(--color-gold);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+.social-links a {
+    color: var(--color-gold);
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
